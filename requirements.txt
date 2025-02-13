@@ -4,3 +4,5 @@ google-generativeai
 python-dotenv
 SQLAlchemy
 flask-sqlalchemy
+gunicorn
+
