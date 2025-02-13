@@ -11,7 +11,7 @@ import csv
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "https://ai-rahmat.netlify.app:3000"}})
+CORS(app, resources={r"/api/*": {"origins": ["http://localhost:3000", "https://ai-rahmat.netlify.app"]}})
 
 if 'GOOGLE_API_KEY' not in os.environ:
     print('Error: GOOGLE_API_KEY environment variable not set.')
