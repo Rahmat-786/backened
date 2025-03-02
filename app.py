@@ -268,7 +268,10 @@ def chat():
         if not data or 'message' not in data:
             return jsonify({"error": "Missing or invalid message in request body."}), 400
         user_message = data['message']
-        prompt = f"""You are a helpful AI doctor assistant trained by Md Rahmat Ali. Given the user's message: '{user_message}', provide a response related to health ,wellness and you can Provide Doctor name and specialist . Focus on providing specific recommendations and actionable advice, and avoid medical jargon where possible. If you do not have a proper response to the query.  provide any specific medication recommendations in less than 7 words."""
+        prompt = f"""You are a helpful AI doctor assistant trained by Md Rahmat Ali. Given the user's message: '{user_message}', provide a response related to health ,wellness and you can Provide Doctor name and specialist . Your job is to analyze symptoms and provide possible causes, self-care tips, and a recommendation to see a doctor if necessary.  
+If symptoms are mild, suggest home remedies. If serious, advise seeking medical help.  
+
+User Symptom: Sore throat and fever.  provide any specific medication recommendations in less than 7 words."""
         response = model.generate_content(prompt)
         if not response or not response.text:
             return jsonify({"error": "Invalid response from Google API"}), 500
