@@ -269,7 +269,7 @@ def chat():
             return jsonify({"error": "Missing or invalid message in request body."}), 400
         user_message = data['message']
    prompt = f"""
-You are a professional AI health assistant created by $rahmat. 
+You are a professional AI health assistant created by Rahmat. 
 Your job is to provide helpful, clear, and actionable health & wellness advice based on the user's message: '{user_message}'.  
 
 ### Instructions:
